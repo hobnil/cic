@@ -1,0 +1,189 @@
+<!-- ================================================================================== -->
+<!-- COPIAR Y PEGAR ESTE CONTENIDO EN UN ARCHIVO LLAMADO curso-contencion-mecanica.html -->
+<!-- ================================================================================== -->
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Contención Mecánica - CIC</title>
+    <!-- Incluir aquí los mismos <head> links y scripts que en index.html -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'principal': '#04b8f3', 'oscuro': '#1a1a1a', 'gris-claro': '#f7f7f7' },
+                    fontFamily: { 'titulo': ['Montserrat', 'sans-serif'], 'cuerpo': ['Lato', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>.dropdown:hover .dropdown-menu { display: block; }</style>
+</head>
+<body class="font-cuerpo bg-white text-oscuro">
+
+    <!-- HEADER -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="img/logo-cic.png" alt="Logo CIC" class="h-12 w-auto"></a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-principal">Inicio</a>
+                <a href="quienes-somos.html" class="text-gray-700 hover:text-principal">Quiénes Somos</a>
+                <div class="relative dropdown">
+                    <a href="formacion.html" class="font-bold text-principal flex items-center">
+                        Formación <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-64">
+                        <a href="curso-contencion-mecanica.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Curso de Contención Mecánica</a>
+                        <a href="curso-contencion-verbal.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Taller de Contención Verbal</a>
+                        <a href="curso-gestion-agresividad.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Gestión Integral de la Agresividad</a>
+                    </div>
+                </div>
+                <a href="servicios.html" class="text-gray-700 hover:text-principal">Servicios</a>
+                <a href="blog.html" class="text-gray-700 hover:text-principal">Blog</a>
+                <a href="contacto.html" class="bg-principal text-white px-5 py-2.5 rounded-full font-bold hover:bg-oscuro transition-all">CONTACTO</a>
+            </div>
+            <div class="md:hidden"><button class="text-oscuro">&#9776;</button></div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO CURSO -->
+        <section class="bg-gris-claro">
+            <div class="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="font-bold text-principal uppercase tracking-wider">Curso Online</span>
+                    <h1 class="text-4xl md:text-5xl font-titulo font-extrabold mt-2">Curso de Contención Mecánica</h1>
+                    <p class="mt-4 text-lg text-gray-600">Domina los protocolos y técnicas homologadas para la aplicación segura, ética y eficaz de la contención mecánica en situaciones de crisis.</p>
+                    <a href="#inscripcion" class="mt-8 inline-block bg-principal text-white px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-oscuro transition-all">Inscríbete Ahora</a>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Curso de Contención Mecánica" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLES DEL CURSO -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 grid lg:grid-cols-3 gap-12">
+                <!-- Columna Principal -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl font-titulo font-bold">¿Qué aprenderás en este curso?</h2>
+                    <p class="mt-4 text-gray-600">Este curso te proporcionará una base sólida y práctica para actuar con seguridad y profesionalidad. Al finalizar, serás capaz de:</p>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start"><span class="text-principal font-bold mr-3">✓</span><span>Identificar los marcos legales y éticos que regulan la contención mecánica.</span></li>
+                        <li class="flex items-start"><span class="text-principal font-bold mr-3">✓</span><span>Aplicar técnicas de contención secuenciada para minimizar riesgos.</span></li>
+                        <li class="flex items-start"><span class="text-principal font-bold mr-3">✓</span><span>Conocer y utilizar correctamente los distintos dispositivos de inmovilización homologados.</span></li>
+                        <li class="flex items-start"><span class="text-principal font-bold mr-3">✓</span><span>Monitorizar al paciente durante la contención y saber cuándo y cómo retirarla.</span></li>
+                        <li class="flex items-start"><span class="text-principal font-bold mr-3">✓</span><span>Registrar adecuadamente el procedimiento y realizar el análisis post-incidente.</span></li>
+                    </ul>
+
+                    <h2 class="text-3xl font-titulo font-bold mt-12">Temario del Curso</h2>
+                    <div class="mt-6 space-y-4">
+                        <p><strong>Módulo 1:</strong> Marco Jurídico y Deontológico.</p>
+                        <p><strong>Módulo 2:</strong> Evaluación del Riesgo y Prevención.</p>
+                        <p><strong>Módulo 3:</strong> Técnicas de Contención Física en Equipo.</p>
+                        <p><strong>Módulo 4:</strong> Dispositivos de Contención y su Uso Correcto.</p>
+                        <p><strong>Módulo 5:</strong> Cuidados y Monitorización del Paciente Inmovilizado.</p>
+                        <p><strong>Módulo 6:</strong> Procedimiento de Retirada y Cuidados Post-Contención.</p>
+                    </div>
+                </div>
+                <!-- Columna Lateral -->
+                <aside class="bg-gris-claro p-8 rounded-lg shadow-lg h-fit">
+                    <h3 class="text-2xl font-titulo font-bold">Detalles</h3>
+                    <ul class="mt-6 space-y-4 text-gray-700">
+                        <li class="flex items-center"><strong class="w-24">Modalidad:</strong> 100% Online</li>
+                        <li class="flex items-center"><strong class="w-24">Duración:</strong> 50 horas</li>
+                        <li class="flex items-center"><strong class="w-24">Acceso:</strong> 12 meses</li>
+                        <li class="flex items-center"><strong class="w-24">Certificación:</strong> Acreditado</li>
+                    </ul>
+                    <div class="mt-8">
+                        <p class="text-3xl font-titulo font-bold">299€</p>
+                        <a href="#inscripcion" class="w-full mt-4 inline-block text-center bg-principal text-white px-8 py-3 rounded-full font-bold uppercase hover:bg-oscuro transition-all">Inscribirme</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- A QUIÉN VA DIRIGIDO -->
+        <section class="py-24 bg-gris-claro">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-titulo font-bold">Dirigido a Profesionales</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-gray-600">Este curso está especialmente diseñado para personal sanitario y de seguridad que se enfrenta a situaciones de agitación en su día a día.</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">Personal de Enfermería</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">Médicos/as</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">TCAE y Celadores</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">Técnicos de Emergencias</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">Personal de Seguridad</span>
+                    <span class="bg-white px-4 py-2 rounded-full shadow-md">Educadores Sociales</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE INSCRIPCIÓN -->
+        <section id="inscripcion" class="py-24 bg-oscuro text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-titulo font-bold">Da el siguiente paso en tu carrera</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-300">Rellena el formulario para completar tu inscripción y acceder al contenido del curso inmediatamente.</p>
+                <div class="mt-12 max-w-lg mx-auto">
+                    <form action="#" method="POST" class="text-left">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Nombre" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full">
+                            <input type="email" placeholder="Email" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full">
+                        </div>
+                        <div class="mt-6">
+                            <input type="text" placeholder="Teléfono" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full">
+                        </div>
+                        <div class="mt-6 text-center">
+                            <button type="submit" class="bg-principal text-white px-8 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all">Confirmar Inscripción</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-oscuro text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div><img src="img/logo-cic.png" alt="Logo CIC" class="h-12 mb-4"><p class="text-gray-400">Formación integral para profesionales de la salud y seguridad.</p></div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Navegación</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="quienes-somos.html" class="text-gray-400 hover:text-white">Quiénes Somos</a></li>
+                        <li><a href="formacion.html" class="text-gray-400 hover:text-white">Formación</a></li>
+                        <li><a href="servicios.html" class="text-gray-400 hover:text-white">Servicios</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="contacto.html" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Legal</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Aviso Legal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Contacto</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li>info@centrocontencion.com</li>
+                        <li>+34 912 345 678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500"><p>&copy; 2025 Centro Integral de Contención. Diseñado por Manus.</p></div>
+        </div>
+    </footer>
+
+</body>
+</html>
