@@ -1,293 +1,337 @@
+<!-- ======================================================================= -->
+<!-- ATENCIÓN: COPIAR Y PEGAR ESTE CONTENIDO EN UN ARCHIVO LLAMADO index.html -->
+<!-- ======================================================================= -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro Integral de Contención - Maqueta</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Inicio - Centro Integral de Contención</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Montserrat para títulos y Lato para texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-    
-    <!-- Configuración de Tailwind con los colores y fuentes personalizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'principal': '#04b8f3',
-                        'oscuro': '#000000',
-                    },
-                    fontFamily: {
-                        'titulo': ['Montserrat', 'sans-serif'],
-                        'cuerpo': ['Lato', 'sans-serif'],
-                    }
+                    colors: { 'principal': '#04b8f3', 'oscuro': '#1a1a1a', 'gris-claro': '#f7f7f7' },
+                    fontFamily: { 'titulo': ['Montserrat', 'sans-serif'], 'cuerpo': ['Lato', 'sans-serif'] }
                 }
             }
         }
     </script>
-
-    <!-- Estilos para el menú móvil -->
     <style>
-        .menu-hamburguesa.activo .linea-1 {
-            transform: rotate(45deg ) translate(5px, 5px);
-        }
-        .menu-hamburguesa.activo .linea-2 {
-            opacity: 0;
-        }
-        .menu-hamburguesa.activo .linea-3 {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .hero-bg { background-image: linear-gradient(rgba(26, 26, 26, 0.7 ), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop' ); }
     </style>
 </head>
 <body class="font-cuerpo bg-white text-oscuro">
 
-    <!-- ========= HEADER Y NAVEGACIÓN ========= -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <!-- HEADER -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#inicio" class="flex items-center space-x-2">
-                <img src="https://i.imgur.com/gY1y2xx.png" alt="Logo CIC" class="h-12">
-            </a>
-
-            <!-- Menú para Escritorio -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#quienes-somos" class="text-gray-600 hover:text-principal transition-colors">Quiénes Somos</a>
-                <a href="#formacion" class="text-gray-600 hover:text-principal transition-colors">Formación</a>
-                <a href="#servicios" class="text-gray-600 hover:text-principal transition-colors">Servicios</a>
-                <a href="#blog" class="text-gray-600 hover:text-principal transition-colors">Blog</a>
-                <a href="#contacto" class="bg-principal text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all">Contacto</a>
+            <a href="index.html"><img src="https://i.imgur.com/gY1y2xx.png" alt="Logo CIC" class="h-12 w-auto"></a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="quienes-somos.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Quiénes Somos</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-principal transition-colors duration-300 flex items-center">
+                        Formación <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-64">
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Curso de Contención Mecánica</a>
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Taller de Contención Verbal</a>
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Gestión Integral de la Agresividad</a>
+                    </div>
+                </div>
+                <a href="servicios.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Servicios</a>
+                <a href="blog.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Blog</a>
+                <a href="contacto.html" class="bg-principal text-white px-5 py-2.5 rounded-full font-bold hover:bg-oscuro transition-all duration-300">CONTACTO</a>
             </div>
-
-            <!-- Botón de Menú Móvil (Hamburguesa ) -->
-            <div class="md:hidden">
-                <button id="boton-menu" class="menu-hamburguesa focus:outline-none">
-                    <div class="w-6 h-0.5 bg-oscuro mb-1.5 transition-transform duration-300 linea-1"></div>
-                    <div class="w-6 h-0.5 bg-oscuro mb-1.5 transition-opacity duration-300 linea-2"></div>
-                    <div class="w-6 h-0.5 bg-oscuro transition-transform duration-300 linea-3"></div>
-                </button>
-            </div>
+            <!-- Menú Móvil (funcionalidad no implementada en esta maqueta ) -->
+            <div class="md:hidden"><button class="text-oscuro">&#9776;</button></div>
         </nav>
-
-        <!-- Menú para Móvil -->
-        <div id="menu-movil" class="hidden md:hidden bg-white pb-4">
-            <a href="#quienes-somos" class="block text-center py-2 px-4 text-gray-600 hover:bg-gray-100">Quiénes Somos</a>
-            <a href="#formacion" class="block text-center py-2 px-4 text-gray-600 hover:bg-gray-100">Formación</a>
-            <a href="#servicios" class="block text-center py-2 px-4 text-gray-600 hover:bg-gray-100">Servicios</a>
-            <a href="#blog" class="block text-center py-2 px-4 text-gray-600 hover:bg-gray-100">Blog</a>
-            <a href="#contacto" class="block text-center py-3 px-4 bg-principal text-white mx-4 mt-2 rounded-full">Contacto</a>
-        </div>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
-        <!-- ========= SECCIÓN INICIO (HERO) ========= -->
-        <section id="inicio" class="relative h-[60vh] min-h-[400px] flex items-center text-white">
-            <div class="absolute inset-0 bg-oscuro opacity-60"></div>
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Equipo de formación colaborando" class="absolute inset-0 w-full h-full object-cover">
-            <div class="container mx-auto px-6 relative z-10 text-center">
-                <h1 class="text-4xl md:text-6xl font-titulo font-black uppercase">Formación Integral para Profesionales</h1>
-                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">Capacitación especializada en contención y manejo de situaciones críticas. Desarrolla tus habilidades con nosotros.</p>
-                <a href="#formacion" class="mt-8 inline-block bg-principal text-white px-8 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all">Ver Cursos</a>
+        <!-- HERO SECTION -->
+        <section class="hero-bg bg-cover bg-center">
+            <div class="container mx-auto px-6 py-32 text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-titulo font-extrabold tracking-tight">Excelencia en Capacitación Profesional</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Formación especializada en contención y manejo de situaciones críticas. Potencia tu seguridad y la de tu equipo.</p>
+                <a href="formacion.html" class="mt-8 inline-block bg-principal text-white px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-oscuro transition-all duration-300 transform hover:scale-105">Explorar Cursos</a>
             </div>
         </section>
 
-        <!-- ========= SECCIÓN QUIÉNES SOMOS ========= -->
-        <section id="quienes-somos" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-titulo font-bold">Sobre el Centro Integral de Contención</h2>
-                <div class="w-24 h-1 bg-principal mx-auto mt-4 mb-8"></div>
-                <p class="max-w-3xl mx-auto text-gray-600">
-                    Somos un equipo de expertos dedicados a la formación y capacitación en técnicas de contención verbal, física y farmacológica. Nuestra misión es dotar a los profesionales de las herramientas necesarias para garantizar la seguridad y el bienestar en entornos sanitarios, sociales y educativos.
-                </p>
-                <div class="mt-12 grid md:grid-cols-3 gap-8">
-                    <div class="p-6">
-                        <h3 class="text-xl font-titulo font-bold">Misión</h3>
-                        <p class="mt-2 text-gray-600">Ofrecer formación de excelencia, basada en la evidencia y el respeto a la dignidad de la persona.</p>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-titulo font-bold">Visión</h3>
-                        <p class="mt-2 text-gray-600">Ser el centro de referencia a nivel nacional en la capacitación de técnicas de contención seguras y eficaces.</p>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-titulo font-bold">Valores</h3>
-                        <p class="mt-2 text-gray-600">Ética, profesionalidad, innovación y compromiso con la seguridad del paciente y del profesional.</p>
-                    </div>
+        <!-- QUIÉNES SOMOS (INTRO) -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute top-0 left-0 w-32 h-32 bg-principal/10 rounded-full -translate-x-8 -translate-y-8"></div>
+                    <div class="absolute bottom-0 right-0 w-32 h-32 bg-principal/10 rounded-full translate-x-8 translate-y-8"></div>
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2138&auto=format&fit=crop" alt="Equipo profesional" class="rounded-lg shadow-2xl relative z-10">
+                </div>
+                <div>
+                    <span class="font-bold text-principal uppercase tracking-wider">Nuestro Compromiso</span>
+                    <h2 class="text-3xl md:text-4xl font-titulo font-bold mt-2">Garantizando Entornos Seguros y Profesionales</h2>
+                    <p class="mt-4 text-gray-600">Somos un centro de referencia en la formación y consultoría sobre técnicas de contención. Nuestra misión es dotar a los profesionales de las herramientas más eficaces y respetuosas, basadas en la evidencia científica y un profundo sentido ético.</p>
+                    <a href="quienes-somos.html" class="mt-6 inline-block font-bold text-principal hover:text-oscuro transition-colors">Conoce nuestra historia →</a>
                 </div>
             </div>
         </section>
 
-        <!-- ========= SECCIÓN FORMACIÓN ========= -->
-        <section id="formacion" class="py-20">
+        <!-- FORMACIÓN DESTACADA -->
+        <section class="py-24 bg-gris-claro">
             <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-titulo font-bold">Nuestra Oferta Formativa</h2>
-                    <div class="w-24 h-1 bg-principal mx-auto mt-4 mb-12"></div>
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="font-bold text-principal uppercase tracking-wider">Formación</span>
+                    <h2 class="text-3xl md:text-4xl font-titulo font-bold mt-2">Programas Diseñados para el Éxito</h2>
+                    <p class="mt-4 text-gray-600">Nuestros cursos combinan teoría rigurosa con práctica intensiva para asegurar un aprendizaje significativo y aplicable desde el primer día.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card de Curso 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Curso online" class="w-full h-48 object-cover">
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Curso online" class="w-full h-56 object-cover">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                            <span class="absolute top-4 left-4 bg-principal text-white text-xs font-bold uppercase px-3 py-1 rounded-full">Online</span>
+                        </div>
                         <div class="p-6">
-                            <span class="text-sm text-principal font-semibold">ONLINE</span>
-                            <h3 class="text-xl font-titulo font-bold mt-2">Curso de Contención Mecánica</h3>
-                            <p class="mt-2 text-gray-600">Aprende los protocolos y técnicas homologadas para la aplicación segura de la contención mecánica.</p>
-                            <a href="#" class="mt-4 inline-block text-principal font-bold hover:underline">Más Información →</a>
+                            <h3 class="text-xl font-titulo font-bold">Curso de Contención Mecánica</h3>
+                            <p class="mt-2 text-gray-600 h-20">Protocolos y técnicas homologadas para la aplicación segura de la contención mecánica.</p>
+                            <a href="curso-detalle.html" class="mt-4 inline-block font-bold text-principal hover:text-oscuro">Ver Detalles →</a>
                         </div>
                     </div>
-                    <!-- Card de Curso 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" alt="Curso presencial" class="w-full h-48 object-cover">
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" alt="Curso presencial" class="w-full h-56 object-cover">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                            <span class="absolute top-4 left-4 bg-principal text-white text-xs font-bold uppercase px-3 py-1 rounded-full">Presencial</span>
+                        </div>
                         <div class="p-6">
-                            <span class="text-sm text-principal font-semibold">PRESENCIAL</span>
-                            <h3 class="text-xl font-titulo font-bold mt-2">Taller de Contención Verbal</h3>
-                            <p class="mt-2 text-gray-600">Desarrolla habilidades de comunicación para desescalar situaciones de crisis sin contacto físico.</p>
-                            <a href="#" class="mt-4 inline-block text-principal font-bold hover:underline">Más Información →</a>
+                            <h3 class="text-xl font-titulo font-bold">Taller de Contención Verbal</h3>
+                            <p class="mt-2 text-gray-600 h-20">Habilidades de comunicación para desescalar situaciones de crisis sin contacto físico.</p>
+                            <a href="curso-detalle.html" class="mt-4 inline-block font-bold text-principal hover:text-oscuro">Ver Detalles →</a>
                         </div>
                     </div>
-                    <!-- Card de Curso 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                        <img src="https://images.unsplash.com/photo-1581092916376-3c6776a39b34?q=80&w=2070&auto=format&fit=crop" alt="Curso avanzado" class="w-full h-48 object-cover">
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1581092916376-3c6776a39b34?q=80&w=2070&auto=format&fit=crop" alt="Curso avanzado" class="w-full h-56 object-cover">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                            <span class="absolute top-4 left-4 bg-principal text-white text-xs font-bold uppercase px-3 py-1 rounded-full">Avanzado</span>
+                        </div>
                         <div class="p-6">
-                            <span class="text-sm text-principal font-semibold">AVANZADO</span>
-                            <h3 class="text-xl font-titulo font-bold mt-2">Gestión Integral de la Agresividad</h3>
-                            <p class="mt-2 text-gray-600">Un enfoque completo que integra prevención, intervención y análisis post-incidente.</p>
-                            <a href="#" class="mt-4 inline-block text-principal font-bold hover:underline">Más Información →</a>
+                            <h3 class="text-xl font-titulo font-bold">Gestión Integral de la Agresividad</h3>
+                            <p class="mt-2 text-gray-600 h-20">Enfoque 360°: prevención, intervención y análisis post-incidente para una gestión completa.</p>
+                            <a href="curso-detalle.html" class="mt-4 inline-block font-bold text-principal hover:text-oscuro">Ver Detalles →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========= SECCIÓN SERVICIOS ========= -->
-        <section id="servicios" class="py-20 bg-gray-50">
+        <!-- BLOG (INTRO ) -->
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-titulo font-bold">Otros Servicios</h2>
-                    <div class="w-24 h-1 bg-principal mx-auto mt-4 mb-12"></div>
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="font-bold text-principal uppercase tracking-wider">Blog</span>
+                    <h2 class="text-3xl md:text-4xl font-titulo font-bold mt-2">Conocimiento y Actualidad</h2>
+                    <p class="mt-4 text-gray-600">Explora nuestros artículos, guías y reflexiones sobre las últimas tendencias y buenas prácticas en el sector.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" class="rounded-lg shadow-xl" alt="Consultoría">
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-2xl font-titulo font-bold">Consultoría para Centros</h3>
-                            <p class="mt-2 text-gray-600">Analizamos las necesidades de tu institución y diseñamos planes de formación a medida para tus equipos.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-titulo font-bold">Implementación de Protocolos</h3>
-                            <p class="mt-2 text-gray-600">Te ayudamos a desarrollar e implementar protocolos de actuación seguros y actualizados según la normativa vigente.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-titulo font-bold">Supervisión de Casos</h3>
-                            <p class="mt-2 text-gray-600">Ofrecemos sesiones de supervisión para profesionales y equipos que enfrentan situaciones de alta complejidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========= SECCIÓN BLOG ========= -->
-        <section id="blog" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-titulo font-bold">Últimas Publicaciones</h2>
-                    <div class="w-24 h-1 bg-principal mx-auto mt-4 mb-12"></div>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Post 1 -->
                     <article class="group">
-                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1973&auto=format&fit=crop" alt="Blog post" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        <div class="mt-4">
-                            <p class="text-sm text-gray-500">18 Nov, 2025</p>
-                            <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">La importancia de la desescalada verbal en urgencias</h3>
-                            <a href="#" class="mt-2 inline-block font-bold text-principal opacity-0 group-hover:opacity-100 transition-opacity">Leer más...</a>
-                        </div>
+                        <a href="blog-post.html">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1973&auto=format&fit=crop" alt="Blog post" class="w-full h-56 object-cover rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500">18 Nov, 2025</p>
+                                <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">La importancia de la desescalada verbal en urgencias</h3>
+                            </div>
+                        </a>
                     </article>
                     <!-- Post 2 -->
                     <article class="group">
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Blog post" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        <div class="mt-4">
-                            <p class="text-sm text-gray-500">10 Nov, 2025</p>
-                            <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">5 Mitos sobre la contención mecánica</h3>
-                            <a href="#" class="mt-2 inline-block font-bold text-principal opacity-0 group-hover:opacity-100 transition-opacity">Leer más...</a>
-                        </div>
+                        <a href="#">
+                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="Blog post" class="w-full h-56 object-cover rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500">10 Nov, 2025</p>
+                                <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">5 Mitos sobre la contención mecánica</h3>
+                            </div>
+                        </a>
                     </article>
                     <!-- Post 3 -->
                     <article class="group">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Blog post" class="w-full h-48 object-cover rounded-lg shadow-md">
-                        <div class="mt-4">
-                            <p class="text-sm text-gray-500">02 Nov, 2025</p>
-                            <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">Cómo preparar a tu equipo para una crisis</h3>
-                            <a href="#" class="mt-2 inline-block font-bold text-principal opacity-0 group-hover:opacity-100 transition-opacity">Leer más...</a>
-                        </div>
+                        <a href="#">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Blog post" class="w-full h-56 object-cover rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300">
+                            <div class="mt-4">
+                                <p class="text-sm text-gray-500">02 Nov, 2025</p>
+                                <h3 class="text-xl font-titulo font-bold mt-1 group-hover:text-principal transition-colors">Cómo preparar a tu equipo para una crisis</h3>
+                            </div>
+                        </a>
                     </article>
                 </div>
-            </div>
-        </section>
-
-        <!-- ========= SECCIÓN CONTACTO ========= -->
-        <section id="contacto" class="py-20 bg-oscuro text-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-titulo font-bold">Contacta con Nosotros</h2>
-                    <div class="w-24 h-1 bg-principal mx-auto mt-4 mb-12"></div>
-                    <p class="max-w-2xl mx-auto text-gray-300">¿Tienes alguna pregunta o quieres inscribirte en un curso? Rellena el formulario o utiliza nuestros datos de contacto.</p>
-                </div>
-                <div class="mt-12 max-w-lg mx-auto">
-                    <form action="#" method="POST">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Nombre" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full">
-                            <input type="email" placeholder="Email" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full">
-                        </div>
-                        <div class="mt-6">
-                            <textarea placeholder="Tu mensaje" rows="5" class="bg-gray-800 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-principal w-full"></textarea>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <button type="submit" class="bg-principal text-white px-8 py-3 rounded-full font-bold uppercase hover:bg-opacity-90 transition-all">Enviar Mensaje</button>
-                        </div>
-                    </form>
+                 <div class="text-center mt-16">
+                    <a href="blog.html" class="bg-oscuro text-white px-8 py-3 rounded-full font-bold uppercase tracking-wider hover:bg-principal transition-all duration-300">Ver todas las publicaciones</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ========= FOOTER ========= -->
-    <footer class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6 text-center text-gray-600">
-            <img src="https://i.imgur.com/gY1y2xx.png" alt="Logo CIC" class="h-12 mx-auto mb-4">
-            <p>&copy; 2025 Centro Integral de Contención. Todos los derechos reservados.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-principal">Aviso Legal</a>
-                <a href="#" class="hover:text-principal">Política de Privacidad</a>
-                <a href="#" class="hover:text-principal">Política de Cookies</a>
+    <!-- FOOTER -->
+    <footer class="bg-oscuro text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://i.imgur.com/gY1y2xx.png" alt="Logo CIC" class="h-12 mb-4">
+                    <p class="text-gray-400">Formación integral para profesionales de la salud y seguridad.</p>
+                </div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Navegación</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="quienes-somos.html" class="text-gray-400 hover:text-white">Quiénes Somos</a></li>
+                        <li><a href="formacion.html" class="text-gray-400 hover:text-white">Formación</a></li>
+                        <li><a href="servicios.html" class="text-gray-400 hover:text-white">Servicios</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="contacto.html" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Legal</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Aviso Legal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-titulo font-bold tracking-wider uppercase">Contacto</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li>info@centrocontencion.com</li>
+                        <li>+34 912 345 678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 Centro Integral de Contención. Diseñado con ♥ por Manus.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Script para el menú móvil -->
+</body>
+</html>
+
+
+<!-- ======================================================================= -->
+<!-- ATENCIÓN: COPIAR Y PEGAR ESTE CONTENIDO EN UN ARCHIVO LLAMADO blog-post.html -->
+<!-- ======================================================================= -->
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La importancia de la desescalada verbal - CIC Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <script>
-        const botonMenu = document.getElementById('boton-menu' );
-        const menuMovil = document.getElementById('menu-movil');
-        const enlacesMenu = menuMovil.getElementsByTagName('a');
-
-        botonMenu.addEventListener('click', () => {
-            menuMovil.classList.toggle('hidden');
-            botonMenu.classList.toggle('activo');
-        });
-
-        // Cierra el menú al hacer clic en un enlace
-        for (let i = 0; i < enlacesMenu.length; i++) {
-            enlacesMenu[i].addEventListener('click', () => {
-                menuMovil.classList.add('hidden');
-                botonMenu.classList.remove('activo');
-            });
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'principal': '#04b8f3', 'oscuro': '#1a1a1a', 'gris-claro': '#f7f7f7' },
+                    fontFamily: { 'titulo': ['Montserrat', 'sans-serif'], 'cuerpo': ['Lato', 'sans-serif'] }
+                }
+            }
         }
     </script>
+    <style>
+        .prose h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; margin-top: 2em; margin-bottom: 1em; }
+        .prose h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; margin-top: 1.5em; margin-bottom: 0.75em; }
+        .prose a { color: #04b8f3; text-decoration: none; }
+        .prose a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="font-cuerpo bg-white text-oscuro">
+
+    <!-- HEADER (Repetir en todas las páginas ) -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="https://i.imgur.com/gY1y2xx.png" alt="Logo CIC" class="h-12 w-auto"></a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="quienes-somos.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Quiénes Somos</a>
+                <div class="relative dropdown">
+                    <button class="text-gray-700 hover:text-principal transition-colors duration-300 flex items-center">
+                        Formación <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-64">
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Curso de Contención Mecánica</a>
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Taller de Contención Verbal</a>
+                        <a href="curso-detalle.html" class="block px-4 py-2 text-gray-700 hover:bg-principal hover:text-white">Gestión Integral de la Agresividad</a>
+                    </div>
+                </div>
+                <a href="servicios.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Servicios</a>
+                <a href="blog.html" class="text-gray-700 hover:text-principal transition-colors duration-300">Blog</a>
+                <a href="contacto.html" class="bg-principal text-white px-5 py-2.5 rounded-full font-bold hover:bg-oscuro transition-all duration-300">CONTACTO</a>
+            </div>
+            <div class="md:hidden"><button class="text-oscuro">&#9776;</button></div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <article class="py-24">
+            <div class="container mx-auto px-6">
+                <!-- Título y Metadatos -->
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <a href="blog.html" class="font-bold text-principal uppercase tracking-wider">Blog</a>
+                    <h1 class="text-4xl md:text-5xl font-titulo font-extrabold mt-2">La importancia de la desescalada verbal en urgencias</h1>
+                    <p class="mt-4 text-gray-500">Publicado el 18 de Noviembre, 2025 por Equipo CIC</p>
+                </div>
+
+                <!-- Imagen Principal -->
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1973&auto=format&fit=crop" alt="Persona escribiendo en un cuaderno" class="w-full max-w-5xl mx-auto h-96 object-cover rounded-lg shadow-xl">
+
+                <!-- Contenido del Post -->
+                <div class="prose prose-lg max-w-3xl mx-auto mt-16 text-gray-700">
+                    <p class="lead">En el entorno de alta presión de un servicio de urgencias, la capacidad de gestionar situaciones de crisis es fundamental. Antes de recurrir a medidas físicas, la desescalada verbal emerge como la herramienta más poderosa y respetuosa para reconducir la agitación y prevenir la violencia.</p>
+                    
+                    <p>La desescalada verbal no es simplemente "hablar para calmar". Es un conjunto de técnicas de comunicación estratégica diseñadas para reducir la tensión, establecer una relación de confianza y guiar al paciente hacia un estado de mayor control. Se basa en la empatía, la escucha activa y el establecimiento de límites claros y seguros.</p>
+
+                    <h2>¿Por qué es tan crucial en urgencias?</h2>
+                    <p>El entorno de urgencias es, por naturaleza, estresante. El dolor, el miedo, la incertidumbre y las largas esperas pueden actuar como detonantes de la agitación en pacientes y familiares. Un profesional entrenado en desescalada verbal puede:</p>
+                    <ul>
+                        <li><strong>Prevenir la escalada:</strong> Identificar las señales tempranas de agitación y actuar proactivamente para evitar que la situación empeore.</li>
+                        <li><strong>Garantizar la seguridad:</strong> Reducir el riesgo de agresiones físicas tanto para el personal como para otros pacientes.</li>
+                        <li><strong>Mejorar la alianza terapéutica:</strong> Un paciente que se siente escuchado y respetado es más propenso a colaborar con el tratamiento.</li>
+                        <li><strong>Reducir el uso de contenciones:</strong> Limitar el uso de la contención mecánica o farmacológica a los casos estrictamente necesarios, en línea con las mejores prácticas y la legislación vigente.</li>
+                    </ul>
+
+                    <h3>Técnicas Clave de Desescalada Verbal</h3>
+                    <p>Aunque cada situación es única, existen principios universales que sustentan una intervención verbal efectiva:</p>
+                    <ol>
+                        <li><strong>Mantener la calma y el control:</strong> Tu propia serenidad es contagiosa. Habla en un tono bajo y pausado.</li>
+                        <li><strong>Escucha activa:</strong> Presta atención no solo a las palabras, sino también al lenguaje no verbal. Valida los sentimientos del paciente ("Entiendo que esté frustrado" ).</li>
+                        <li><strong>Ofrecer opciones:</strong> Dar al paciente una sensación de control, aunque sea limitado, puede ser muy efectivo ("¿Prefiere que hablemos aquí o en una sala más tranquila?").</li>
+                        <li><strong>Establecer límites:</strong> De forma respetuosa pero firme ("No puedo permitir que se haga daño o que nos lo haga a nosotros. Estamos aquí para ayudarle").</li>
+                    </ol>
+
+                    <p>Dominar la desescalada verbal es una inversión en seguridad, calidad asistencial y humanización de los cuidados. En nuestro <a href="curso-detalle.html">Taller de Contención Verbal</a>, profundizamos en estas y otras técnicas a través de simulaciones prácticas y análisis de casos reales, preparando a los profesionales para enfrentar con confianza los desafíos diarios de las urgencias.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER (Repetir en todas las páginas) -->
+    <footer class="bg-oscuro text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 Centro Integral de Contención. Diseñado con ♥ por Manus.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
